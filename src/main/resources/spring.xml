@@ -3,11 +3,31 @@
 
 <beans>
     <bean id="triangle" class="Triangle">
+        <property name="A" ref="zeroPoint"/>
+        <property name="B" ref="onePoint"/>
+        <property name="C" ref="twoPoint"/>
+    </bean>
+    <bean id="zeroPoint" class="Point">
+        <property name="x" value="0"/>
+        <property name="y" value="1"/>
+    </bean>
+    <bean id="onePoint" class="Point">
+        <property name="x" value="5"/>
+        <property name="y" value="2"/>
+    </bean>
+    <bean id="twoPoint" class="Point">
+        <property name="x" value="7"/>
+        <property name="y" value="9"/>
+    </bean>
+
+
+
+
         <!--<property name="type" value="Isosceles"/>
         This was used for setter injection-->
         <!-- Constructor Injection-->
-        <constructor-arg value="Scalene"/>
-        <constructor-arg value="5"/>
+        <!--<constructor-arg value="Scalene"/>-->
+        <!--<constructor-arg value="5"/>-->
 
         <!--To assign value only to contructor with int parameter-->
         <!--<constructor-arg type="int" value="10"/>-->
@@ -15,7 +35,7 @@
         <!--To have contructor with two argument with first  -->
         <!--<constructor-arg index="0" value="Equilateral"/>-->
         <!--<constructor-arg index="1" value="20"/>-->
-    </bean>
+
 </beans>
 
 

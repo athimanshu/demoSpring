@@ -1,35 +1,37 @@
 public class Triangle {
-    private String type;
+    private Point A;
+    private Point B;
 
-    public int getHeight() {
-        return height;
+    public Point getA() {
+        return A;
     }
 
-    private int height;
-    //Constructor Injection
-    Triangle(String type)
-    {
-        this.type=type;
+    public void setA(Point a) {
+        A = a;
     }
 
-    public Triangle(String type, int height)
-    {
-        this.type=type;
-        this.height=height;
+    public Point getB() {
+        return B;
     }
 
-    public String getType() {
-        return type;
+    public void setB(Point b) {
+        B = b;
     }
 
-    //Commenting out the setter to use contructor injection
-//    public void setType(String type) {
-//        this.type = type;
-//    }
+    public Point getC() {
+        return C;
+    }
+
+    public void setC(Point c) {
+        C = c;
+    }
+
+    private Point C;
 
     public void draw()
     {
-        //System.out.println(getType()+" Triangle drawn");
-        System.out.println(getType() +" Triangle drawn of height "+ getHeight());
+        System.out.println("Point A= ("+getA().getX()+ getA().getY()+")");
+        System.out.println("Point B= ("+getB().getX()+ getB().getY()+")");
+        System.out.println("Point C= ("+getC().getX()+ getC().getY()+")");
     }
 }
