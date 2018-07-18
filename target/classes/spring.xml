@@ -2,25 +2,17 @@
 <!DOCTYPE beans PUBLIC  "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
 <beans>
-    <bean id="triangle" class="Triangle">
-        <property name="points">
-            <list>
-                <ref bean="zeroPoint"></ref>
-                <ref bean="onePoint"></ref>
-                <ref bean="twoPoint"></ref>
-            </list>
-        </property>
-
+    <bean id="triangle" class="Triangle" autowire="byName" scope="prototype">
     </bean>
-    <bean id="zeroPoint" class="Point">
+    <bean id="pointA" class="Point">
         <property name="x" value="0"/>
         <property name="y" value="1"/>
     </bean>
-    <bean id="onePoint" class="Point">
+    <bean id="pointB" class="Point">
         <property name="x" value="5"/>
         <property name="y" value="2"/>
     </bean>
-    <bean id="twoPoint" class="Point">
+    <bean id="pointC" class="Point">
         <property name="x" value="7"/>
         <property name="y" value="9"/>
     </bean>
