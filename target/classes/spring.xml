@@ -3,9 +3,14 @@
 
 <beans>
     <bean id="triangle" class="Triangle">
-        <property name="A" ref="zeroPoint"/>
-        <property name="B" ref="onePoint"/>
-        <property name="C" ref="twoPoint"/>
+        <property name="points">
+            <list>
+                <ref bean="zeroPoint"></ref>
+                <ref bean="onePoint"></ref>
+                <ref bean="twoPoint"></ref>
+            </list>
+        </property>
+
     </bean>
     <bean id="zeroPoint" class="Point">
         <property name="x" value="0"/>

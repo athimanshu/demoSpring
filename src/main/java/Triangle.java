@@ -1,37 +1,19 @@
+import java.util.List;
+
 public class Triangle {
-    private Point A;
-    private Point B;
-
-    public Point getA() {
-        return A;
+    public List<Point> getPoints() {
+        return points;
     }
 
-    public void setA(Point a) {
-        A = a;
+    public void setPoints(List<Point> points) {
+        this.points = points;
     }
 
-    public Point getB() {
-        return B;
-    }
+    private List<Point> points;
 
-    public void setB(Point b) {
-        B = b;
-    }
-
-    public Point getC() {
-        return C;
-    }
-
-    public void setC(Point c) {
-        C = c;
-    }
-
-    private Point C;
-
-    public void draw()
-    {
-        System.out.println("Point A= ("+getA().getX()+ getA().getY()+")");
-        System.out.println("Point B= ("+getB().getX()+ getB().getY()+")");
-        System.out.println("Point C= ("+getC().getX()+ getC().getY()+")");
+    public void draw() {
+        for (Point point : points) {
+            System.out.println("Point: " + point.getX() + "," + point.getY());
+        }
     }
 }

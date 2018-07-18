@@ -2,30 +2,44 @@
 <!DOCTYPE beans PUBLIC  "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
 <beans>
-    <bean id="triangle" class="Triangle" name="triangle-name">
-        <property name="A" ref="zeroPoint">
-            <!--<idref = "zeroPoint"/>-->
+    <bean id="triangle" class="Triangle">
+        <property name="points">
+            <list>
+                <ref bean="zeroPoint"></ref>
+                <ref bean="onePoint"></ref>
+                <ref bean="twoPoint"></ref>
+            </list>
+        </property>
 
-        </property>
-        <property name="B">
-            <bean class="Point">
-                <property name="x" value="5"/>
-                <property name="y" value="2"/>
-            </bean>
-        </property>
-        <property name="C">
-            <bean class="Point">
-                <property name="x" value="7"/>
-                <property name="y" value="9"/>
-            </bean>
-        </property>
     </bean>
     <bean id="zeroPoint" class="Point">
         <property name="x" value="0"/>
         <property name="y" value="1"/>
     </bean>
-    <alias name="triangle" alias="triangle-alias"/>
+    <bean id="onePoint" class="Point">
+        <property name="x" value="5"/>
+        <property name="y" value="2"/>
+    </bean>
+    <bean id="twoPoint" class="Point">
+        <property name="x" value="7"/>
+        <property name="y" value="9"/>
+    </bean>
 
+
+
+
+        <!--<property name="type" value="Isosceles"/>
+        This was used for setter injection-->
+        <!-- Constructor Injection-->
+        <!--<constructor-arg value="Scalene"/>-->
+        <!--<constructor-arg value="5"/>-->
+
+        <!--To assign value only to contructor with int parameter-->
+        <!--<constructor-arg type="int" value="10"/>-->
+
+        <!--To have contructor with two argument with first  -->
+        <!--<constructor-arg index="0" value="Equilateral"/>-->
+        <!--<constructor-arg index="1" value="20"/>-->
 
 </beans>
 
